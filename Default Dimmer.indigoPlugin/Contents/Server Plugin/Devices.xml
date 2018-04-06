@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<Devices>
+	<Device type='dimmer' id='defaultDimmer'>
+	    <Name>Default Dimmer</Name>
+	    <ConfigUI>
+            <Field id='dimmerDevice' type='menu'>
+                <Label>Real Dimmer:</Label>
+				<List class='self' method='getDimmerDeviceList'/>
+				<CallbackMethod>loadHardwareFields</CallbackMethod>
+            </Field>
+			<Field id='liveUpdate' type='checkbox' defaultValue='true'>
+                <Label>Live Update?:</Label>
+				<Description>Change actual brightness if ON when default changes  </Description>
+            </Field>
+			<Field id='showHardwareFields' type='checkbox' defaultValue='false' hidden='true' />
+			<Field id='updateHardware' type='checkbox' defaultValue='true' visibleBindingId='showHardwareFields' visibleBindingValue='true' alwaysUseInDialogHeightCalc='true'>
+                <Label>Update Hardware?:</Label>
+				<Description>Update hardware to use default level when operated manually  </Description>
+            </Field>
+        </ConfigUI>
+		<States>
+			<State id='defaultBrightness'>
+                <ValueType>Number</ValueType>
+                <TriggerLabel>Default Brightness</TriggerLabel>
+                <ControlPageLabel>Default Brightness</ControlPageLabel>
+            </State>
+		</States>
+    </Device>
+</Devices>

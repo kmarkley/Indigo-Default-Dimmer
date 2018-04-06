@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Actions>
+	<Action id="setDimmerDefault" deviceFilter="self" uiPath="DeviceActions">
+		<Name>Set Default Dimmer Level</Name>
+		<CallbackMethod>setDimmerDefault</CallbackMethod>
+		<ConfigUI>
+			<Field id="defaultLevel" type="textfield">
+				<Label>Level:</Label>
+			</Field>
+		</ConfigUI>
+	</Action>
+</Actions>
