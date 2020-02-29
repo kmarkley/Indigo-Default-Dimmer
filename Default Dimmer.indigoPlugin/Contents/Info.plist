@@ -5,15 +5,15 @@
 	<key>PluginVersion</key>
 	<string>0.0.1</string>
 	<key>ServerApiVersion</key>
-	<string>2.0</string>
+	<string>2.3</string>
 	<key>IwsApiVersion</key>
 	<string>1.0.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>Dimmer Default</string>
+	<string>Default Dimmer Level</string>
 	<key>CFBundleName</key>
-	<string>Dimmer Default</string>
+	<string>Default Dimmer Level</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.morris.dimmer-default</string>
+	<string>com.morris.default-dimmer-level</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
 	<key>CFBundleURLTypes</key>
@@ -23,5 +23,12 @@
 			<string>https://github.com/kmarkley/Indigo-Dimmer-Default</string>
 		</dict>
 	</array>
+	<key>GithubInfo</key>
+	<dict>
+		<key>GithubRepo</key>
+		<string>Indigo-Dimmer-Default</string>
+		<key>GithubUser</key>
+		<string>kmarkley</string>
+	</dict>
 </dict>
 </plist>

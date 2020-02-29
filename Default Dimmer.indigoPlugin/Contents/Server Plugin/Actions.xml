@@ -1,12 +1,30 @@
-<?xml version="1.0"?>
+<?xml version='1.0'?>
 <Actions>
-	<Action id="setDimmerDefault" deviceFilter="self" uiPath="DeviceActions">
+	<Action id='setDefaultDimmerLevel' deviceFilter='indigo.dimmer' uiPath='DeviceActions'>
 		<Name>Set Default Dimmer Level</Name>
-		<CallbackMethod>setDimmerDefault</CallbackMethod>
+		<CallbackMethod>setDefaultDimmerLevel</CallbackMethod>
 		<ConfigUI>
-			<Field id="defaultLevel" type="textfield">
+			<Field id='defaultLevel' type='textfield'>
 				<Label>Level:</Label>
 			</Field>
+			<Field id='liveUpdate' type='checkbox' defaultValue='true'>
+                <Label>Live Update:</Label>
+				<Description>Change actual brightness if device is ON when default changes?   </Description>
+            </Field>
+			<Field id='spacer1' type='label'>
+				<Label> </Label>
+			</Field>
+			<Field id='insteon_warning' type='label' fontColor='red' alignWithControl='false'>
+				<Label>Only for INSTEON dimmer devices:</Label>
+			</Field>
+			<Field id='setHardwareDefault' type='checkbox' defaultValue='false'>
+                <Label>Update hardware:</Label>
+				<Description>Update hardware to use default level when operated manually?   </Description>
+            </Field>
 		</ConfigUI>
+	</Action>
+	<Action id='dimToDefaultLevel' deviceFilter='indigo.dimmer' uiPath='DeviceActions'>
+		<Name>Dim To Default Level</Name>
+		<CallbackMethod>dimToDefaultLevel</CallbackMethod>
 	</Action>
 </Actions>
