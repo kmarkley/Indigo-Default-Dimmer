@@ -1,10 +1,9 @@
 ## Dimmer Default
 
-Creates simple 'wrapper' type devices that exactly mirror real dimmer devices except:
-1. A default brightness level can be set via action
-2. When the plugin device is turned on, the real dimmer will be set to the default brightness
-3. For Insteon dimmers, the plugin will also (optionally) update the hardware so that manual operation will also use the default brightness.
+If you have triggers to turn on lights, but would like them to turn on at a different brightness at different time of the day, this plugin makes that relatively easy to accomplish.
 
-The plugin device should always bi-directionally sync with the real dimmer.
+1. Use a schedule (or some other logic) to run "Set Default Dimmer Level" actions to set your preferred brightness.
+2. When you turn the light on, use a "Dim To Default Level" action instead of the built-in "Turn On" action.
+3. Profit.
 
-Obviously this plugin has no effect on Insteon scenes/links or Z-wave associations.
+The plugin will optionally change the current brightness if the dimmer is already on when the default level changes.  It will also optionally update INSTEON hardware so that manually turning on the light will also use the default level (for directly-controlled loads only).
