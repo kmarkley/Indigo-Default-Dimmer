@@ -50,7 +50,7 @@ class Plugin(indigo.PluginBase):
         if defaultLevel:
             sharedProps["defaultDimmerLevel"] = defaultLevel
             device.replaceSharedPropsOnServer(sharedProps)
-            self.logger.info(u'"{}" default level set to {}'.format(device.name, defaultLevel))
+            self.logger.info(f'"{device.name}" default level set to {defaultLevel}')
             if action.props['liveUpdate'] and device.onState:
                 self.dimToDefaultLevel(action, device)
             if action.props['setHardwareDefault']:
@@ -63,11 +63,11 @@ class Plugin(indigo.PluginBase):
                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                         ]
                     indigo.insteon.sendRawExtended(device.address, rawCmd)
-                    self.logger.info(u'"{}" default level set to {}'.format(device.name, defaultLevel))
+                    self.logger.info(f'"{device.name}" default level set to {defaultLevel}')
                 except:
-                    self.logger.error(u'Unable to set insteon hardware default level for "{}"'.format(device.name))
+                    self.logger.error(f'Unable to set insteon hardware default level for "{device.name}"')
         else:
-            self.logger.error(u'Unable to set default level for "{}". Check action config.'.format(device.name))
+            self.logger.error(f'Unable to set default level for "{device.name}". Check action config.')
 
 
     #-------------------------------------------------------------------------------
@@ -76,7 +76,7 @@ class Plugin(indigo.PluginBase):
         if defaultLevel:
             indigo.dimmer.setBrightness(device, value=defaultLevel)
         else:
-            self.logger.error(u'"{}" default level is not set (or is zero)'.format(device.name))
+            self.logger.error(f'"{device.name}" default level is not set (or is zero)')
 
 
 ###############################################################################
